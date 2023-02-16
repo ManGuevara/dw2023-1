@@ -1,3 +1,5 @@
+/* DONT REPEAT YOURSELF */
+
 body{
     margin: 0;
     font-family: 'Lato', sans-serif;
@@ -8,27 +10,41 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
 }
 
 nav img{
     width: 100px;
+    /* margin-left: 20px; */
 }
 nav ul{
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
 }
 nav ul li{
     /* ctrl  + } */
     /* margin: 10px; */
     /* margin: 10px 15px; */
     /* margin: 10px 5px 8px 25px; */
+    /* border-right: 1px solid white; */
+}
+.border{
+    border-right: 2px solid white;
 }
 nav ul li a{
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 0 15px;
     /* background-color: peru; */
     display: inline-block;
+}
+
+#sesion{
+    background-color:#ff4842;
+    padding: 3px 15px;
+    border-radius: 5px;
+    /* margin-right: 20px; */
 }
