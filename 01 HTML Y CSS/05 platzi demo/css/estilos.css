@@ -5,6 +5,8 @@ body{
     font-family: 'Lato', sans-serif;
 }
 
+/* NAV */
+
 nav{
     background-color: #273b47;
     display: flex;
@@ -15,6 +17,7 @@ nav{
 
 nav img{
     width: 100px;
+    display: block;
     /* margin-left: 20px; */
 }
 nav ul{
@@ -47,4 +50,36 @@ nav ul li a{
     padding: 3px 15px;
     border-radius: 5px;
     /* margin-right: 20px; */
+}
+
+/* PORTADA */
+section{
+    background-color: #ccc;
+}
+.contenedor{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    /* margin: 0 auto; */
+    /* margin-bottom: 20px; */
+}
+section div div img{
+    display: block;
+    width: 100%;
+}
+/* #prueba{
+    background-color: #ff4842;
+}
+#prueba img{
+    width: 100%;
+    display: block;
+} */
+section div form{
+    text-align: right;
+    padding: 10px 0;
+}
+section div form button{
+    background-color: black;
+    color: white;
+    border-radius: 3px;
 }
