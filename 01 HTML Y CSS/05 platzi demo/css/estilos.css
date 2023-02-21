@@ -103,16 +103,49 @@ nav ul li a{
 }
 
 /* PUBLICACIONES */
+.publicaciones{
+    /* background-color: peru; */
+    padding: 30px 0;
+}
 .publiContenedor{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .publiContenedor article{
-    width: 30%;
+    width: calc(100% / 3 - 20px);
+    margin-bottom: 30px;
 }
 
 .publiContenedor article img{
     display: block;
     width: 100%;
+}
+
+.publiContenedor article div div{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FOOTER */
+footer{
+    text-align: center;
+    padding-bottom: 50px;
+}
+footer span{
+    color: #aaa;
+    display: inline-block;
+    margin-right: 30px;
+}
+footer a{
+    text-decoration: none;
+    display: inline-block;
+    border: 1px solid #aaa;
+    padding: 5px 7px;
+    color: #4d4d4d;
+    background-color: #f5f5f5;
+}
+footer a:not(:last-child){
+    margin-right: 15px;
 }
