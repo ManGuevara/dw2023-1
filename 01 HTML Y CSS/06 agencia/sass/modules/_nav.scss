@@ -1,0 +1,25 @@
+.nav{
+    background-color: #212529;
+    &__contenedor{ // & == .nav
+        display: flex;
+        justify-content: space-between;
+        &--logo{ // & == .nav__contenedor
+            color: #fec503;
+            font-size: 2.8rem;
+            font-family: $font-kaushan;
+        }
+        &__menu{
+            display: flex;
+            &__item{
+                &--link{
+                    color: white;
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+                    font-family: $font-mont;
+                    padding: 1rem 1.5rem;
+                }
+            }
+        }
+    }
+}
+

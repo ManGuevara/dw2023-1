@@ -1,0 +1,65 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /*
+      1rem = 16px
+      width: 91px -> 5.6875rem
+      // ⚡⚡ transformarlo a 10px la fuente base 
+      del root
+
+      1rem = 10px
+      width: 91px -> 9.1rem
+
+      16px ===== 100%
+      10px ----> 62.5%
+  */
+  font-size: 62.5%;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/*
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Merriweather', serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto Slab', serif;
+*/
+.nav {
+  background-color: #212529;
+}
+.nav__contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+.nav__contenedor--logo {
+  color: #fec503;
+  font-size: 2.8rem;
+  font-family: "Kaushan Script", cursive;
+}
+.nav__contenedor__menu {
+  display: flex;
+}
+.nav__contenedor__menu__item--link {
+  color: white;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 1.5rem;
+}
+
+/*# sourceMappingURL=estilos.css.map */
