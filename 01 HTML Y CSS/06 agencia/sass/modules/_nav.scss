@@ -1,5 +1,8 @@
 .nav{
-    background-color: #212529;
+    // background-color: #212529;
+    padding: 2.5rem 0;
+    position: fixed;
+    width: 100%;
     &__contenedor{ // & == .nav
         display: flex;
         justify-content: space-between;
@@ -17,6 +20,11 @@
                     text-transform: uppercase;
                     font-family: $font-mont;
                     padding: 1rem 1.5rem;
+                    transition: all .3s;
+                    &:hover{
+                        color: #fec503;
+                        transition: all .3s;
+                    }
                 }
             }
         }

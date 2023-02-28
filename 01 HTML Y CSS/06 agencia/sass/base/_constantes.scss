@@ -9,3 +9,34 @@ $font-kaushan: 'Kaushan Script', cursive;
 $font-merri: 'Merriweather', serif;
 $font-mont: 'Montserrat', sans-serif;
 $font-roboto: 'Roboto Slab', serif;
+
+.contenedor{
+    max-width: 120rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.text-white{
+    color: white;
+}
+
+.btn{
+    font-size: 1.8rem;
+    font-family: $font-mont;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 2rem 4rem;
+    border-radius: .5rem;
+}
+.btn-amarillo{
+    color: white;
+    background-color: #fed136;
+}
+.btn-verde{
+    color: rgba(255, 255, 255, .8);
+    background-color: green;
+}
