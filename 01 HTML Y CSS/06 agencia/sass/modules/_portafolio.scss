@@ -1,0 +1,23 @@
+.portafolio{
+    background-color: #4d4d4d;
+    &__contenedor{
+        &__box{
+            display: flex;
+            flex-wrap: wrap;
+            // justify-content: space-between;
+            column-gap: 2rem;
+            row-gap: 2rem;
+            // gap: 2rem;
+            &__item{
+                width: calc(100% / 3 - 4rem / 3);
+                background-color: lightblue;
+                // margin-bottom: 2rem;
+                &__imgBox{
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
