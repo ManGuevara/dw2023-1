@@ -339,7 +339,7 @@ a {
 }
 
 .portafolio {
-  background-color: #4d4d4d;
+  background-color: #eeeeee;
 }
 .portafolio__contenedor__box {
   display: flex;
@@ -349,10 +349,31 @@ a {
 }
 .portafolio__contenedor__box__item {
   width: calc(33.3333333333% - 1.3333333333rem);
-  background-color: lightblue;
+}
+.portafolio__contenedor__box__item__imgBox {
+  position: relative;
 }
 .portafolio__contenedor__box__item__imgBox img {
   width: 100%;
+}
+.portafolio__contenedor__box__item__imgBox div {
+  position: absolute;
+  top: 0;
+  background-color: rgba(254, 209, 54, 0.9);
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 6rem;
+  display: flex;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.portafolio__contenedor__box__item__imgBox div:hover {
+  opacity: 1;
+  transition: all 0.3s;
 }
 
 /*# sourceMappingURL=estilos.css.map */
