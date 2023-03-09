@@ -1,10 +1,29 @@
+/*
+    ⚡⚡ BREAKPOINTS ⚡⚡
+    EM -> referencia a la fuenta base de la etiqueta contenedora
+    1400px / 16px -> 87.5em
+    1200PX / 16PX -> 75em
+    992PX / 16PX -> 62em
+    768PX / 16PX -> 48em
+    576PX / 16PX -> 36em
+    480PX / 16PX -> 30em
+    320PX / 16PX -> 20em
+*/
+
+$bp-big: 87.5em;
+$bp-extraLarge: 75em;
+$bp-large: 62em;
+$bp-medium: 48em;
+$bp-small: 36em;
+$bp-extraSmall: 30em;
+
 *{
     margin: 0;
     padding: 0;
 }
 
 html{
-    // el tamaño de la fuente base del root = 16px
+    // el tamaño de la fuente base de la etiqueta root = 16px
     /*
         1rem = 16px
         width: 91px -> 5.6875rem
@@ -18,6 +37,9 @@ html{
         10px ----> 62.5%
     */
     font-size: 62.5%;
+    @media only screen and (max-width: $bp-small){
+        font-size: 50%;
+    }
 }
 
 

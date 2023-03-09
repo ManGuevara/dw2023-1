@@ -6,7 +6,7 @@ let nav = document.querySelector('.nav');
 // console.log(scrollY);
 
 window.addEventListener('scroll', function(){
-    console.log('hiciste scroll', scrollY);
+    // console.log('hiciste scroll', scrollY);
     if(scrollY > 0){
         nav.classList.add('cambioNav');
     } else{
