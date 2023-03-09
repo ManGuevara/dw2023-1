@@ -323,6 +323,7 @@ a {
 @media only screen and (max-width: 62em) {
   .nav__contenedor--logo {
     font-size: 2rem;
+    z-index: 1;
   }
 }
 .nav__contenedor__menu {
@@ -330,7 +331,21 @@ a {
 }
 @media only screen and (max-width: 62em) {
   .nav__contenedor__menu {
-    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2rem;
+    transition: all 0.3s;
+  }
+  .nav__contenedor__menu.mostrarMenu {
+    left: 0;
+    transition: all 0.3s;
   }
 }
 .nav__contenedor__menu__item--link {
@@ -345,6 +360,11 @@ a {
   color: #fec503;
   transition: all 0.3s;
 }
+@media only screen and (max-width: 62em) {
+  .nav__contenedor__menu__item--link {
+    font-size: 2.4rem;
+  }
+}
 .nav__contenedor--btn {
   font-family: "Montserrat", sans-serif;
   font-size: 1.2rem;
@@ -354,6 +374,7 @@ a {
   padding: 1rem;
   border-radius: 0.5rem;
   display: none;
+  z-index: 1;
 }
 @media only screen and (max-width: 62em) {
   .nav__contenedor--btn {
