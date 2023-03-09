@@ -269,6 +269,7 @@ a {
   padding: 2.5rem 0;
   position: fixed;
   width: 100%;
+  transition: all 0.3s;
 }
 .nav__contenedor {
   display: flex;
@@ -278,6 +279,7 @@ a {
   color: #fec503;
   font-size: 2.8rem;
   font-family: "Kaushan Script", cursive;
+  transition: all 0.3s;
 }
 .nav__contenedor__menu {
   display: flex;
@@ -292,6 +294,15 @@ a {
 }
 .nav__contenedor__menu__item--link:hover {
   color: #fec503;
+  transition: all 0.3s;
+}
+.nav.cambioNav {
+  background-color: #212529;
+  padding: 1rem 0;
+  transition: all 0.3s;
+}
+.nav.cambioNav .nav__contenedor--logo {
+  font-size: 2rem;
   transition: all 0.3s;
 }
 
@@ -462,6 +473,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   column-gap: 3rem;
+  justify-content: center;
 }
 .contacto__contenedor__form__col {
   width: calc(50% - 1.5rem);
