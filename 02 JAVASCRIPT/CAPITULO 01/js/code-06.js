@@ -13,7 +13,7 @@ function retornarValores(){
 
 console.log(retornarValores());
 
-// ES6 ARROW FUNCTIONS
+// ES6 ⚡⚡ ARROW FUNCTIONS
 
 const saludar2 = () => {
     console.log('hola desde un arrow function');
