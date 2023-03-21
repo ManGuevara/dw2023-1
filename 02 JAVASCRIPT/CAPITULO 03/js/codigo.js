@@ -27,13 +27,13 @@ form.addEventListener('submit', function(e){
         // console.log(elemento, index);
         // true o false
         if(valor === respCorrectas[indice]){
-            console.log(`la respuesta de la pregunta ${indice + 1} es correcta`);
+            // console.log(`la respuesta de la pregunta ${indice + 1} es correcta`);
             puntaje += 25;
         } else {
-            console.log(`la respuesta de la pregunta ${indice + 1} es erronea 💥💥`);
+            // console.log(`la respuesta de la pregunta ${indice + 1} es erronea 💥💥`);
         }
     });
-    console.log(puntaje);
+    // console.log(puntaje);
     // resultado.querySelector('span').textContent = puntaje;
     // resultado.classList.remove('d-none');
     let posicionEjeY = scrollY; // 158 -> 0
@@ -44,11 +44,11 @@ form.addEventListener('submit', function(e){
     // }, 1000);
     let animacionTop = setInterval(function(){
         if(posicionEjeY <= 0){
-            console.log('aqui tengo que parar');
+            // console.log('aqui tengo que parar');
             clearInterval(animacionTop);
         } else {
             posicionEjeY -= 7;
-            console.log(posicionEjeY);
+            // console.log(posicionEjeY);
             scrollTo(0, posicionEjeY);
         }
     }, 5);
@@ -56,15 +56,36 @@ form.addEventListener('submit', function(e){
     resultado.classList.remove('d-none');
 
     let sumaPuntajeTotal = 0;
-    let velocidad = 50;
+    let velocidad = 3;
 
-    let animacionSuma = setInterval(function(){
-        if(sumaPuntajeTotal === puntaje){
-            clearInterval(animacionSuma);
-        } else {
-            sumaPuntajeTotal += 5;
-            // console.log(sumaPuntajeTotal);
+    let animacion2;
+
+    function imprimirNota(){
+        // console.log('repeticion');
+        sumaPuntajeTotal += 2;
+    }
+    function repeticion(){
+        velocidad *= 1.09;
+        imprimirNota();
+        if(sumaPuntajeTotal <= puntaje){
+            animacion2 = setTimeout(repeticion, velocidad);
+            resultado.querySelector('span').textContent = `${sumaPuntajeTotal}%`;
         }
-        resultado.querySelector('span').textContent = `${sumaPuntajeTotal}%`;
-    }, velocidad);
+    }
+
+    repeticion();
+
+    // let animacionSuma = setInterval(function(){
+    //     if(sumaPuntajeTotal === puntaje){
+    //         clearInterval(animacionSuma);
+    //     } else {
+    //         sumaPuntajeTotal += 5;
+    //         velocidad += 50;
+    //         // console.log(sumaPuntajeTotal);
+    //     }
+    //     resultado.querySelector('span').textContent = `${sumaPuntajeTotal}%`;
+    // }, velocidad);
+
+
+
 });
