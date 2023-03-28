@@ -45,3 +45,17 @@ SELECT *
         INNER JOIN personajes b ON a.peli_id = b.per_peli_id -- A
         INNER JOIN actores c ON c.act_id = b.per_act_id      -- B
  
+
+SELECT *
+    FROM peliculas a
+        LEFT JOIN personajes b ON a.peli_id = b.per_peli_id
+        RIGHT JOIN actores c ON c.act_id = b.per_act_id    
+
+
+-- ⚡⚡ 4 TABLAS
+SELECT *
+    FROM personajes a
+        INNER JOIN actores b ON a.per_act_id = b.act_id
+        INNER JOIN peliculas c ON a.per_peli_id = c.peli_id
+        INNER JOIN directores d ON c.peli_dire_id = d.dire_id
+
