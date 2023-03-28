@@ -33,3 +33,31 @@ SELECT
 SELECT *
     FROM actores, personajes
         WHERE actores.act_id = personajes.per_act_id
+
+CREATE TABLE directores (
+    dire_id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    dire_nombres VARCHAR(50) NOT NULL,
+    dire_apellidos VARCHAR(50) NOT NULL
+)
+
+INSERT INTO directores (dire_nombres, dire_apellidos) VALUES
+    ('Jon', 'Watts'),
+    ('Lana', 'Wachoswky'),
+    ('James', 'Cameron'),
+    ('Christopher', 'Nolan'),
+    ('Stanley', 'Kubric'),
+    ('Quentin', 'Tarantino')
+
+ALTER TABLE peliculas ADD COLUMN peli_dire_id INT AFTER peli_id
+
+UPDATE peliculas SET peli_dire_id = 1 WHERE peli_id = 1
+UPDATE peliculas SET peli_dire_id = 2 WHERE peli_id = 2
+UPDATE peliculas SET peli_dire_id = 3 WHERE peli_id = 4
+UPDATE peliculas SET peli_dire_id = 4 WHERE peli_id = 5
+UPDATE peliculas SET peli_dire_id = 5 WHERE peli_id = 6
+UPDATE peliculas SET peli_dire_id = 6 WHERE peli_id = 8
+UPDATE peliculas SET peli_dire_id = 6 WHERE peli_id = 9
+
+SELECT *
+    FROM peliculas, directores
+        WHERE peliculas.peli_dire_id = directores.dire_id
