@@ -1,3 +1,4 @@
+<?php include('conexion.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,6 +16,29 @@
             <a href="#" class="btn btn-info ml-2">Directores</a>
         </div>
         <div class="row">
+            <?php
+                // ⚡⚡ CRUD ⚡⚡
+                /*
+                    C -> CREATE
+                    R -> READ
+                    U -> UPDATE
+                    D -> DELETE
+                */
+                $query = "SELECT a.peli_nombre, CONCAT(b.dire_nombres, ' ', b.dire_apellidos) AS director, a.peli_restricciones FROM peliculas a INNER JOIN directores b ON a.peli_dire_id = b.dire_id";
+                $queryRes = mysqli_query($conexion, $query);
+                // echo $queryRes;
+                // print_r($queryRes);
+
+                $array = ['joshi', 1, true, 12.33];
+                // print_r($array);
+                // Objetos => key - value pair
+                $arrayAsociativo = ["nombre" => "Spiderman", "imagen" => "https://mipeli.com/wick.png", "vistas" => 1543];
+                // print_r($arrayAsociativo);
+                // echo $arrayAsociativo['nombre'];
+                $fila = mysqli_fetch_assoc($queryRes);
+                print_r($fila);
+
+            ?>
             <div class="col-md-3 mb-4">
                 <img src="https://pics.filmaffinity.com/john_wick_chapter_4-101402041-large.jpg" alt="john wick" width="100%">
                 <h4 class="text-info">John Wick 4</h4>
