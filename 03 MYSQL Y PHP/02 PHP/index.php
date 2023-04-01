@@ -12,7 +12,7 @@
     <h1 class="text-center pt-5 pb-5 bg-primary text-white">Bienvenidos(as) a Pelicomic</h1>
     <section class="container">
         <div class="row p-4">
-            <a href="#" class="btn btn-success">Subir pelicula</a>
+            <a href="subir.php" class="btn btn-success">Subir pelicula</a>
             <a href="#" class="btn btn-info ml-2">Directores</a>
         </div>
         <div class="row">
@@ -24,22 +24,32 @@
                     U -> UPDATE
                     D -> DELETE
                 */
-                $query = "SELECT a.peli_nombre, CONCAT(b.dire_nombres, ' ', b.dire_apellidos) AS director, a.peli_restricciones FROM peliculas a INNER JOIN directores b ON a.peli_dire_id = b.dire_id";
+                $query = "SELECT a.peli_nombre, CONCAT(b.dire_nombres, ' ', b.dire_apellidos) AS director, a.peli_restricciones, a.peli_img FROM peliculas a INNER JOIN directores b ON a.peli_dire_id = b.dire_id";
                 $queryRes = mysqli_query($conexion, $query);
-                // echo $queryRes;
-                // print_r($queryRes);
 
-                $array = ['joshi', 1, true, 12.33];
-                // print_r($array);
-                // Objetos => key - value pair
-                $arrayAsociativo = ["nombre" => "Spiderman", "imagen" => "https://mipeli.com/wick.png", "vistas" => 1543];
-                // print_r($arrayAsociativo);
-                // echo $arrayAsociativo['nombre'];
-                $fila = mysqli_fetch_assoc($queryRes);
-                print_r($fila);
-
+                while($fila = mysqli_fetch_assoc($queryRes)){
+                   ?>
+                    <div class="col-md-3 mb-4">
+                        <img src="<?php echo $fila['peli_img']; ?>" alt="john wick" width="100%">
+                        <h4 class="text-info">
+                            <?php 
+                                echo $fila['peli_nombre'];
+                            ?>
+                        </h4>
+                        <div>
+                            <strong>Director: </strong> <?php echo $fila['director']; ?>
+                        </div>
+                        <div>
+                            <strong>Rating: </strong> <?php echo $fila['peli_restricciones']; ?>
+                        </div>
+                        <div class="mt-1">
+                            <a href="#" class="btn btn-success">editar</a>
+                            <a href="#" class="btn btn-danger">borrar</a>
+                        </div>
+                    </div>
+                <?php }
             ?>
-            <div class="col-md-3 mb-4">
+            <!-- <div class="col-md-3 mb-4">
                 <img src="https://pics.filmaffinity.com/john_wick_chapter_4-101402041-large.jpg" alt="john wick" width="100%">
                 <h4 class="text-info">John Wick 4</h4>
                 <div>
@@ -52,7 +62,7 @@
                     <a href="#" class="btn btn-success">editar</a>
                     <a href="#" class="btn btn-danger">borrar</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 </body>
