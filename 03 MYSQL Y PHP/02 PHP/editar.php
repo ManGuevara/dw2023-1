@@ -55,16 +55,29 @@
                 <div class="form-group">
                     <label for="peli_dire_id">Director</label>
                     <select name="peli_dire_id" id="peli_dire_id" class="form-control" required>
-                        <option value="" disabled selected>Selecciona una opción</option>
                         <?php
-                            $query = "SELECT * FROM directores";
-                            $queryRes = mysqli_query($conexion, $query);
-                            while($fila = mysqli_fetch_assoc($queryRes)){
-                                ?>
-                                    <option value="<?php echo $fila['dire_id']; ?>">
-                                        <?php echo $fila['dire_nombres'] . " " . $fila['dire_apellidos'];  ?>
-                                    </option>
-                            <?php }
+                            $queryDire = "SELECT * FROM directores";
+                            $queryDireRes = mysqli_query($conexion, $queryDire);
+                            while($filaDire = mysqli_fetch_assoc($queryDireRes)){
+                                // dire = 4 | peli_dire_id = 3
+                                // sin son iguales -> option que tenga el atributo selected
+                                // si no son -> option sean normales
+                                $dire_id = $filaDire['dire_id'];
+                                $director = $filaDire['dire_nombres'] . " " . $filaDire['dire_apellidos'];
+
+                                if($dire_id == $fila['peli_dire_id']){
+                                    ?>
+                                        <option value="<?php echo $dire_id; ?>" selected>
+                                            <?php echo $director; ?>
+                                        </option>                                    
+                                <?php }
+                                else {
+                                    ?>
+                                        <option value="<?php echo $dire_id; ?>">
+                                            <?php echo $director; ?>
+                                        </option> 
+                                <?php }
+                            }
                         ?>
                     </select>
                 </div>
