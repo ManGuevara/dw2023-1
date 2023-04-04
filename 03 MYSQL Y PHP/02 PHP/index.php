@@ -24,7 +24,7 @@
                     U -> UPDATE
                     D -> DELETE
                 */
-                $query = "SELECT a.peli_nombre, CONCAT(b.dire_nombres, ' ', b.dire_apellidos) AS director, a.peli_restricciones, a.peli_img FROM peliculas a INNER JOIN directores b ON a.peli_dire_id = b.dire_id";
+                $query = "SELECT a.peli_id, a.peli_nombre, CONCAT(b.dire_nombres, ' ', b.dire_apellidos) AS director, a.peli_restricciones, a.peli_img FROM peliculas a INNER JOIN directores b ON a.peli_dire_id = b.dire_id";
                 $queryRes = mysqli_query($conexion, $query);
 
                 while($fila = mysqli_fetch_assoc($queryRes)){
@@ -43,7 +43,7 @@
                             <strong>Rating: </strong> <?php echo $fila['peli_restricciones']; ?>
                         </div>
                         <div class="mt-1">
-                            <a href="#" class="btn btn-success">editar</a>
+                            <a href="editar.php?id=<?php echo $fila['peli_id']; ?>" class="btn btn-success">editar</a>
                             <a href="#" class="btn btn-danger">borrar</a>
                         </div>
                     </div>
